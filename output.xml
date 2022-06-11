@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.8 on win32)" generated="20220610 18:45:24.764" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Lazada" source="C:\Users\Yok\desktop\New folder\test_lazada.robot">
+<test id="s1-t1" name="Return Status" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.lazada.co.th/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220610 18:45:24.933" level="INFO">Opening browser 'chrome' to base url 'https://www.lazada.co.th/'.</msg>
+<status status="PASS" starttime="20220610 18:45:24.932" endtime="20220610 18:45:48.410"/>
+</kw>
+<status status="PASS" starttime="20220610 18:45:24.932" endtime="20220610 18:45:48.410"/>
+</test>
+<test id="s1-t2" name="Robot framework if else condition" line="12">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@data-module-id="campaignBanner"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@data-module-id="campaignBanner"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220610 18:45:48.411" endtime="20220610 18:45:48.443"/>
+</kw>
+<msg timestamp="20220610 18:45:48.443" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20220610 18:45:48.411" endtime="20220610 18:45:48.443"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}'=='True'">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//i[contains(@class,"card-platform-campaign-banner-close lazada-icon lazada-ic-Close1 J_Close")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220610 18:45:48.444" endtime="20220610 18:45:48.474"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//i[contains(@class,"card-platform-campaign-banner-close lazada-icon lazada-ic-Close1 J_Close")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220610 18:45:48.475" level="INFO">Clicking element 'xpath=//i[contains(@class,"card-platform-campaign-banner-close lazada-icon lazada-ic-Close1 J_Close")]'.</msg>
+<status status="PASS" starttime="20220610 18:45:48.475" endtime="20220610 18:45:48.572"/>
+</kw>
+<status status="PASS" starttime="20220610 18:45:48.444" endtime="20220610 18:45:48.572"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id="anonLogin"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220610 18:45:48.572" endtime="20220610 18:45:48.572"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//div[@id="anonLogin"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220610 18:45:48.572" endtime="20220610 18:45:48.572"/>
+</kw>
+<status status="NOT RUN" starttime="20220610 18:45:48.572" endtime="20220610 18:45:48.572"/>
+</branch>
+<status status="PASS" starttime="20220610 18:45:48.444" endtime="20220610 18:45:48.572"/>
+</if>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220610 18:45:48.573" endtime="20220610 18:45:50.698"/>
+</kw>
+<status status="PASS" starttime="20220610 18:45:48.411" endtime="20220610 18:45:50.698"/>
+</test>
+<status status="PASS" starttime="20220610 18:45:24.766" endtime="20220610 18:45:50.700"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test Lazada">Test Lazada</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
